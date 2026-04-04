@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticker Portfolio 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #fcbfc9, #963f47);
+}
+
+/* HERO */
+.hero img {
+  width: 100%;
+}
+
+/* HEADER */
+
+
+    .header h1 {
+    font-family: 'Playfair Display', serif;
+        text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.header p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #fff5f7;
+}
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* TITLE */
+.title {
+    margin-top: 10px;
+    color: #ff4d88;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff69b4, #ffa07a);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 20px;
+}
+
+/* CLOSE */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* NAV */
+.nav {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="ปก00-09.png" alt="Sticker Portfolio">
+</section>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>💖 Sticker Portfolio 💖</h1>
+    
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+
+<!-- รูปใหม่ -->
+<div class="card"><img src="1-01.png" class="clickable"><div class="title">Design #1 💖</div></div>
+<div class="card"><img src="2-01.png" class="clickable"><div class="title">Design #2 💖</div></div>
+<div class="card"><img src="3-01.png" class="clickable"><div class="title">Design #3 💖</div></div>
+<div class="card"><img src="4-01.png" class="clickable"><div class="title">Design #4 💖</div></div>
+<div class="card"><img src="5-01.png" class="clickable"><div class="title">Design #5 💖</div></div>
+<div class="card"><img src="5-5-01.png" class="clickable"><div class="title">Design #6 💖</div></div>
+<div class="card"><img src="6-01.png" class="clickable"><div class="title">Design #7 💖</div></div>
+<div class="card"><img src="7-01.png" class="clickable"><div class="title">Design #8 💖</div></div>
+<div class="card"><img src="8-01.png" class="clickable"><div class="title">Design #9 💖</div></div>
+<div class="card"><img src="9-01.png" class="clickable"><div class="title">Design #10 💖</div></div>
+<div class="card"><img src="10-01.png" class="clickable"><div class="title">Design #11 💖</div></div>
+<div class="card"><img src="11-01.png" class="clickable"><div class="title">Design #12 💖</div></div>
+<div class="card"><img src="12-01.png" class="clickable"><div class="title">Design #13 💖</div></div>
+<div class="card"><img src="13-01.png" class="clickable"><div class="title">Design #14 💖</div></div>
+<div class="card"><img src="14-01.png" class="clickable"><div class="title">Design #15 💖</div></div>
+<div class="card"><img src="15-01.png" class="clickable"><div class="title">Design #16 💖</div></div>
+<div class="card"><img src="16-01.png" class="clickable"><div class="title">Design #17 💖</div></div>
+<div class="card"><img src="17-01.png" class="clickable"><div class="title">Design #18 💖</div></div>
+<div class="card"><img src="18-01.png" class="clickable"><div class="title">Design #19 💖</div></div>
+
+</div>
+
+<!-- BUTTON -->
+<div style="text-align:center;">
+<a href="https://lin.ee/55ELDCZ" target="_blank" class="btn">
+💖 แอดไลน์สั่งงานเลย
+</a>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <span class="nav prev" onclick="changeSlide(-1)">❮</span>
+  <img id="modal-img">
+  <span class="nav next" onclick="changeSlide(1)">❯</span>
+</div>
+
+<!-- SCRIPT -->
+<script>
+let images = [];
+let currentIndex = 0;
+
+document.querySelectorAll(".clickable").forEach((img, index) => {
+    images.push(img.src);
+
+    img.addEventListener("click", () => {
+        openModal(index);
+    });
+});
+
+function openModal(index) {
+  currentIndex = index;
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modal-img").src = images[currentIndex];
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function changeSlide(step) {
+  currentIndex += step;
+
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  document.getElementById("modal-img").src = images[currentIndex];
+}
+</script>
+
+</body>
+</html>
