@@ -1,1 +1,417 @@
-<!DOCTYPE html> <html lang="th"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>🌷flower samples 🌷</title> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet"> <style> body { margin: 0; font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #f7bba6, #8f5365); } /* HERO */ .hero img { width: 100%; } /* HEADER */ .header h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 48px; font-weight: 600; color: #ffffff; letter-spacing: 1px; } .header p { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff5f7; } /* GALLERY */ .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 20px; } .card { background: white; border-radius: 25px; padding: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.3s; } .card:hover { transform: translateY(-10px) scale(1.03); } .card img { width: 100%; border-radius: 20px; cursor: pointer; } /* TITLE */ .title { margin-top: 10px; color: #ff4d88; font-weight: bold; text-align: center; } /* BUTTON */ .btn { display: inline-block; margin: 30px auto; padding: 12px 25px; background: linear-gradient(45deg, #ff69b4, #ffa07a); color: white; border-radius: 30px; text-decoration: none; font-weight: bold; } /* MODAL */ .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; flex-direction: column; } .modal img { max-width: 90%; max-height: 80%; border-radius: 20px; } /* CLOSE */ .close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; } /* NAV */ .nav { position: absolute; top: 50%; font-size: 40px; color: rgb(83, 83, 83); cursor: pointer; } .prev { left: 20px; } .next { right: 20px; } </style> </head> <body> <!-- HERO --> <section class="hero"> <img src="ปก.png" alt="Sticker Portfolio"> </section> <!-- HEADER --> <div class="header"> <h1>flowers samples</h1> </div> <!-- GALLERY --> <div class="gallery"> <!-- GALLERY --> <div class="card"><img src="AD Facebook-01.png" class="clickable"><div class="title">ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-02.png" class="clickable"><div class="title">โคมญี่ปุ่น หรือ ตุ้มหูนางฟ้า🌷</div></div> <div class="card"><img src="AD Facebook-03.png" class="clickable"><div class="title">ไฮเดรนเยีย (Hydrangea)🌷</div></div> <div class="card"><img src="AD Facebook-04.png" class="clickable"><div class="title"> ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-05.png" class="clickable"><div class="title"> ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-06.png" class="clickable"><div class="title"> ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-07.png" class="clickable"><div class="title"> ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-08.png" class="clickable"><div class="title"> ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-09.png" class="clickable"><div class="title">ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-10.png" class="clickable"><div class="title">ไฮเดรนเยีย (Hydrangea) 🌷</div></div> <div class="card"><img src="AD Facebook-11.png" class="clickable"><div class="title">บลูเดซี่ หรือ เดซี่ม่วง (Brachycome) 🌷</div></div> <div class="card"><img src="AD Facebook-12.png" class="clickable"><div class="title"> เฟิร์นข้าหลวงระย้า (Victorian Bird’s Nest Fern) 🌷</div></div> <div class="card"><img src="AD Facebook-13.png" class="clickable"><div class="title">เฟิร์นข้าหลวงคอบบร้า (Cobra Bird's Nest Fern)🌷</div></div> <div class="card"><img src="AD Facebook-14.png" class="clickable"><div class="title">บีโกเนีย (Wax Begonia)🌷</div></div> <div class="card"><img src="AD Facebook-15.png" class="clickable"><div class="title">เฟิร์นข้าหลวงระย้า(Victorian Bird’s Nest Fern) 🌷</div></div> <div class="card"><img src="AD Facebook-16.png" class="clickable"><div class="title">เฟิร์นข้าหลวงคอบบร้า (Cobra Bird's Nest Fern) 🌷</div></div> </div> <!-- BUTTON --> <div style="text-align:center;"> <a href="https://lin.ee/55ELDCZ" target="_blank" class="btn"> 🌷 แอดไลน์สั่งงานเลย </a> </div> <!-- MODAL --> <div id="modal" class="modal"> <span class="close" onclick="closeModal()">&times;</span> <span class="nav prev" onclick="changeSlide(-1)">❮</span> <img id="modal-img"> <span class="nav next" onclick="changeSlide(1)">❯</span> </div> <!-- SCRIPT --> <script> let images = []; let currentIndex = 0; document.querySelectorAll(".clickable").forEach((img, index) => { images.push(img.src); img.addEventListener("click", () => { openModal(index); }); }); function openModal(index) { currentIndex = index; document.getElementById("modal").style.display = "flex"; document.getElementById("modal-img").src = images[currentIndex]; } function closeModal() { document.getElementById("modal").style.display = "none"; } function changeSlide(step) { currentIndex += step; if (currentIndex < 0) currentIndex = images.length - 1; if (currentIndex >= images.length) currentIndex = 0; document.getElementById("modal-img").src = images[currentIndex]; } </script> </body> </html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flower samples </title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f7bba6, #d36d8c);
+}
+
+.btn-line {
+    display: inline-block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ffffff, #ffffff); /* สีเขียว LINE */
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-line:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 195, 0, 0.4);
+}
+
+.hero img { width: 100%; }
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 48px;
+    color: #ffffff;
+}
+
+/* ✅ แถวเดียวทั้งหมด */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ⭐ 3 รูปต่อแถว */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.title {
+    margin-top: 10px;
+    color: #646464;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* เพิ่มสไตล์ราคา */
+.price {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 70%;
+  border-radius: 20px;
+}
+
+#modal-text {
+  color: white;
+  margin-top: 15px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  padding: 12px 20px;
+  border-radius: 15px;
+  white-space: pre-line;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* มือถือ = 2 รูป */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* จอเล็กมาก = 1 รูป */
+    }
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <img src="ปก.png">
+</section>
+
+<div class="header">
+    <h1>flowers samples</h1>
+</div>
+<div class="gallery">
+
+<div class="card">
+<img src="AD Facebook-01.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย (Hydrangea) </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-02.png" class="clickable"
+data-info="💧แสงแดด: ชอบที่ร่มรำไร อากาศเย็น และมีลมโกรกดี ไม่ชอบแดดจัดโดยตรง
+
+การรดน้ำ: ชอบความชื้นสูง แต่ระวังอย่าให้แฉะเกินไป ควรรดน้ำเมื่อหน้าดินเริ่มแห้ง
+
+อุณหภูมิ: ต้นนี้ค่อนข้างอ่อนไหวต่ออากาศร้อนครับ ถ้าอยู่ในที่ที่ร้อนเกินไปดอกจะร่วงง่าย ควรแขวนไว้ในที่เทอเรสหรือใต้ร่มไม้ที่เย็นสบาย🌤">
+<div class="title">โคมญี่ปุ่น </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-03.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-04.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-05.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-06.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-07.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-08.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-09.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-10.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร หรือแดดเช้าที่ไม่แรงจนเกินไป หลีกเลี่ยงแดดจัดตอนบ่ายเพราะจะทำให้ใบและดอกไหม้เหี่ยวได้ง่าย
+
+การรดน้ำ: สำคัญมาก ควรรดน้ำให้ชุ่มสม่ำเสมอ แต่อย่าให้มีน้ำขังจนรากเน่า หากขาดน้ำเพียงวันเดียวดอกจะสำแดงอาการเหี่ยวทันที
+
+ดิน: ชอบดินที่ระบายน้ำได้ดี และมีความชื้นสูง🌤 ">
+<div class="title">ไฮเดรนเยีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-11.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแดดมากครับ ต้นนี้ควรได้รับแสงแดดอย่างน้อย 6 ชั่วโมงต่อวันเพื่อให้ดอกบานสวยและต้นไม่ยืด
+
+การรดน้ำ: รดน้ำวันละครั้งในตอนเช้า อย่าปล่อยให้ดินแห้งสนิทจนต้นเหี่ยว แต่ก็ระวังอย่าให้ดินแฉะเกินไปจนรากเน่า☀ 🌼 ดูแลง่าย">
+<div class="title">บลูเดซี่ </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-12.png" class="clickable"
+data-info="💧 รดน้ำ 2-3 วัน/ครั้ง แสงแดด: ชอบแสงแดดรำไร หรือที่ร่มที่มีแสงสว่างเพียงพอ ไม่ชอบแดดจัดเพราะใบจะเหลืองและไหม้ครับ
+
+การรดน้ำ: ชอบความชื้นสูง ควรรดน้ำให้ชุ่มสม่ำเสมอ และชอบการฉีดพ่นละอองน้ำที่ใบเพื่อเพิ่มความชื้นในอากาศครับ
+
+ดิน: ชอบวัสดุปลูกที่ระบายน้ำและอากาศได้ดี เช่น กาบมะพร้าวสับ 🌤 แดดรำไร🌿">
+<div class="title">เฟิร์นข้าหลวงระย้า </div>
+<div class="price">ราคา 250 บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-13.png" class="clickable"
+data-info="💧 รดน้ำ 2-3 วัน/ครั้ง แสงแดด: ชอบแสงแดดรำไร หรือที่ร่มที่มีแสงสว่างเพียงพอ ไม่ชอบแดดจัดเพราะใบจะเหลืองและไหม้ครับ
+
+การรดน้ำ: ชอบความชื้นสูง ควรรดน้ำให้ชุ่มสม่ำเสมอ และชอบการฉีดพ่นละอองน้ำที่ใบเพื่อเพิ่มความชื้นในอากาศครับ
+
+ดิน: ชอบวัสดุปลูกที่ระบายน้ำและอากาศได้ดี เช่น กาบมะพร้าวสับ 🌤 แดดรำไร🌿 หลีกเลี่ยงแดดแรง">
+<div class="title">เฟิร์นข้าหลวงคอบบร้า </div>
+<div class="price">ราคา 280 บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-14.png" class="clickable"
+data-info="💧 แสงแดด: ชอบแสงแดดรำไร ไม่ควรโดนแดดจัดโดยตรงเพราะใบจะไหม้และต้นจะโทรมเร็วครับ
+
+การรดน้ำ: ระวังเรื่องนี้เป็นพิเศษครับ ควรรดน้ำที่โคนต้น พยายามอย่าให้โดนใบและดอกเพราะอาจทำให้เน่าได้ง่าย ชอบดินชุ่มชื้นแต่ไม่แฉะ">
+<div class="title">บีโกเนีย </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+
+<div class="card">
+<img src="AD Facebook-18.png" class="clickable"
+data-info="💧 1. แสงแดด (Sunlight)
+ชอบแสงแดดรำไรถึงปานกลาง: ลิลลี่ชอบอากาศเย็นและแสงสว่างที่เพียงพอ แต่ไม่ควรวางให้โดนแดดจัดตรงๆ นานเกินไป เพราะจะทำให้กลีบดอกไหม้และเหี่ยวเร็ว
+
+ตำแหน่ง: ควรวางในที่ที่สว่าง มีลมพัดผ่านดี และอากาศไม่ร้อนอบอ้าว
+
+2. การรดน้ำ (Watering)
+รดน้ำที่โคนต้น: ควรรดน้ำเมื่อหน้าดินเริ่มแห้ง (ประมาณ 1-2 วันครั้ง)
+
+ข้อควรระวัง: อย่ารดน้ำโดนดอก เพราะจะทำให้กลีบดอกช้ำและเน่าได้ง่าย รวมถึงระวังอย่าให้น้ำขังในกระถางเพราะหัวลิลลี่จะเน่าครับ">
+<div class="title">ดอกลิลลี่ (Lily) </div>
+<div class="price">ราคา - บาท</div>
+</div>
+
+
+<div class="card">
+<img src="AD Facebook-17.png" class="clickable"
+data-info="💧  แสงแดด (Sunlight)
+ชอบแสงแดดรำไร: ไม่ควรให้โดนแดดจัดโดยตรง (โดยเฉพาะแดดช่วงบ่าย) เพราะจะทำให้ใบไหม้และสีซีดเหลือง
+
+ตำแหน่งที่เหมาะสม: ใต้ร่มไม้ที่มีแสงส่องถึง, ระเบียงบ้านทิศตะวันออกที่โดนแดดเช้า หรือบริเวณที่มีสแลนกรองแสงประมาณ 50-60%
+
+การรดน้ำ (Watering)
+ความชื้นสูง: เฟิร์นสไบนางชอบความชื้นมาก ควรรดน้ำอย่างน้อย วันละ 1 ครั้ง ในตอนเช้า
+
+เทคนิคการรด: ควรรดให้ชุ่มไปถึงรากและฉีดพ่นละอองน้ำที่ใบด้วย เพื่อเพิ่มความชื้นในอากาศรอบๆ ต้น (ถ้าอากาศร้อนจัดควรรดน้ำเย็นเพิ่มในช่วงเย็น)🌤 ">
+<div class="title">เฟิร์นสไบนาง (Giant Sword Fern) </div>
+<div class="price">ราคา - บาท</div>
+</div> 
+
+
+
+<div class="card">
+<img src="AD Facebook-15.png" class="clickable"
+data-info="💧 รดน้ำ 2-3 วัน/ครั้ง แสงแดด: ชอบแสงแดดรำไร หรือที่ร่มที่มีแสงสว่างเพียงพอ ไม่ชอบแดดจัดเพราะใบจะเหลืองและไหม้ครับ
+
+การรดน้ำ: ชอบความชื้นสูง ควรรดน้ำให้ชุ่มสม่ำเสมอ และชอบการฉีดพ่นละอองน้ำที่ใบเพื่อเพิ่มความชื้นในอากาศครับ
+
+ดิน: ชอบวัสดุปลูกที่ระบายน้ำและอากาศได้ดี เช่น กาบมะพร้าวสับ🌤 แดดรำไร🌿">
+<div class="title">เฟิร์นข้าหลวงระย้า </div>
+<div class="price">ราคา 280 บาท</div>
+</div>
+
+<div class="card">
+<img src="AD Facebook-16.png" class="clickable"
+data-info="💧 รดน้ำ 2-3 วัน/ครั้ง แสงแดด: ชอบแสงแดดรำไร หรือที่ร่มที่มีแสงสว่างเพียงพอ ไม่ชอบแดดจัดเพราะใบจะเหลืองและไหม้ครับ
+
+การรดน้ำ: ชอบความชื้นสูง ควรรดน้ำให้ชุ่มสม่ำเสมอ และชอบการฉีดพ่นละอองน้ำที่ใบเพื่อเพิ่มความชื้นในอากาศครับ
+
+ดิน: ชอบวัสดุปลูกที่ระบายน้ำและอากาศได้ดี เช่น กาบมะพร้าวสับ🌤">
+<div class="title">เฟิร์นข้าหลวงโอซาก้า </div>
+<div class="price">ราคา 280 บาท</div>
+</div>
+
+</div>
+
+
+<div style="text-align:center;">
+<a href="https://lin.ee/55ELDCZ" target="_blank" class="btn-line">
+ แอดไลน์สั่งงานเลย
+</a>
+</div>
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <span class="nav prev" onclick="changeSlide(-1)">❮</span>
+  <img id="modal-img">
+  <div id="modal-text"></div>
+  <span class="nav next" onclick="changeSlide(1)">❯</span>
+</div>
+
+<script>
+let images = [];
+let infos = [];
+let currentIndex = 0;
+
+const allImgs = document.querySelectorAll(".clickable");
+
+allImgs.forEach((img, index) => {
+    images.push(img.src);
+    // ดึงราคามาแสดงใน modal ด้วย
+    const card = img.closest('.card');
+    const priceText = card.querySelector('.price').innerText;
+    infos.push(priceText + "\n\n" + img.dataset.info);
+
+    img.addEventListener("click", () => {
+        openModal(index);
+    });
+});
+
+function openModal(index) {
+  currentIndex = index;
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modal-img").src = images[currentIndex];
+  document.getElementById("modal-text").innerText = infos[currentIndex];
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function changeSlide(step) {
+  currentIndex += step;
+
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  document.getElementById("modal-img").src = images[currentIndex];
+  document.getElementById("modal-text").innerText = infos[currentIndex];
+}
+</script>
+
+</body>
+</html>
